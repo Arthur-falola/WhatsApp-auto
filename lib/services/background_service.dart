@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:flutter_background_service/flutter_background_service.dart';
+/*import 'package:flutter/material.dart';*/
+/*import 'package:flutter_background_service/flutter_background_service.dart';*/
 import 'package:flutter_background_service_android/flutter_background_service_android.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'auto_reply_service.dart';
@@ -68,7 +68,7 @@ void onStart(ServiceInstance service) async {
   NotificationChannelService.notificationStream.listen((data) async {
     final message = data['message'] as String? ?? '';
     final replyKey = data['replyKey'] as String? ?? '';
-    final sender = data['sender'] as String? ?? '';
+   // final sender = data['sender'] as String? ?? '';
 
     final reply = autoReplyService.getAutoReply(message);
     if (reply != null && replyKey.isNotEmpty) {
