@@ -35,8 +35,16 @@ class WhatsAppNotificationListener : NotificationListenerService() {
 
                 val resultIntent = Intent()
                 RemoteInput.addResultsToIntent(replyAction.remoteInputs, resultIntent, resultBundle)
-                replyAction.actionIntent.send(this, 0, resultIntent)
-                true
+
+replyAction.actionIntent.send(
+    this,
+    0,
+    resultIntent,
+    null,
+    null
+)
+
+true
             } catch (e: Exception) {
                 e.printStackTrace()
                 false
