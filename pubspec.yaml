@@ -17,7 +17,7 @@ dependencies:
   flutter_background_service_android: ^6.2.2
   permission_handler: ^11.3.0
   shared_preferences: ^2.2.3
-  flutter_overlay_window: ^0.3.0
+  #flutter_overlay_window: ^0.3.0
   flutter_local_notifications: ^17.1.2
   provider: ^6.1.2
   uuid: ^4.3.3
