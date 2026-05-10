@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.whatsauto">
+    package="com.whatsauto" xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -62,7 +62,8 @@
         <!-- Background Service (flutter_background_service) -->
         <service
             android:name="id.flutter.flutter_background_service.BackgroundService"
-            android:exported="false"
+    android:exported="true"
+    tools:replace="android:exported"
             android:foregroundServiceType="dataSync" />
 
         <!-- Boot receiver to restart service on boot -->
