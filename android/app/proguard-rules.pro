@@ -1,0 +1,9 @@
+-keep class com.whatsauto.** { *; }
+-keep class io.flutter.** { *; }
+-keep class io.flutter.plugin.** { *; }
+-keep class io.flutter.embedding.** { *; }
+-dontwarn io.flutter.embedding.**
+-keep class id.flutter.flutter_background_service.** { *; }
+-keep class * extends android.service.notification.NotificationListenerService { *; }
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable

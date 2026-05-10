@@ -1,0 +1,34 @@
+name: whatsapp_autoreply
+description: WhatsApp Auto-Reply App - Mode Web & Mode Notification
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  webview_flutter: ^4.4.2
+  webview_flutter_android: ^3.12.1
+  flutter_background_service: ^5.0.5
+  flutter_background_service_android: ^6.2.2
+  permission_handler: ^11.3.0
+  shared_preferences: ^2.2.3
+  flutter_overlay_window: ^0.3.0
+  flutter_local_notifications: ^17.1.2
+  provider: ^6.1.2
+  uuid: ^4.3.3
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
