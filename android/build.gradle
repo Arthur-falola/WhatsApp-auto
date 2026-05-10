@@ -1,33 +1,30 @@
-plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "flutter.gradle"
+buildscript {
+ext.kotlin_version = '1.9.22'
+repositories {
+google()
+mavenCentral()
 }
-
-android {
-    namespace "com.whatsapp.auto"
-    compileSdkVersion 34
-
-    defaultConfig {
-        applicationId "com.whatsapp.auto"
-        minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-        coreLibraryDesugaringEnabled true
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-}
-
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+classpath 'com.android.tools.build:gradle:8.2.2'
+classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+}
+}
+
+allprojects {
+repositories {
+google()
+mavenCentral()
+}
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+delete rootProject.buildDir
 }
